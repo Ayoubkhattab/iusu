@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+
+
+@layer utilities {
+ 
+  .gradient-text {
+    background-image: linear-gradient(90deg, #137DA4, #03A579);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+  .sign_btn_gradient {
+    background-image: linear-gradient(90deg, #024059, #0E5876);
+     
+  }
+
+}
+ 
+ 
+ 
+ .hero{
+    background-image: url('/images/bg.webp');
+    /* background-image:   linear-gradient(rgba(3, 166, 121, 0.5), rgba(2, 115, 95, 0.8)), url('/images/msjd.svg'); */
+    background-size: cover , cover;  
+    background-position: center;  
+    background-repeat: repeat , no-repeat; 
+
+ }
+.line-text-s {
+  background-image:   linear-gradient(rgba(3, 166, 121, 0.5), rgba(2, 115, 95, 1));
+}
+
+
