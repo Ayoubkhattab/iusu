@@ -19,7 +19,8 @@ export default function Footer() {
       </div>
 
       <p className="flex h-16 flex-row items-center justify-center bg-info text-center text-sm text-white">
-        جميع الحقوق محفوظة للجامعة الإسلامية في سوريا &copy; 2024
+        جميع الحقوق محفوظة للجامعة الإسلامية في سوريا &copy;{" "}
+        {new Date().getFullYear()}
       </p>
     </footer>
   );

@@ -7,7 +7,7 @@ export default async function Video() {
   return (
     <div className="mt-6 bg-white px-5 pt-7 md:px-12">
       {/* title  */}
-      <SectionTitle text={"الفيديو التعريفي"} />
+      <SectionTitle text={"فيديو ..."} />
       <div className="mt-5 flex flex-row items-center justify-center gap-y-5 lg:px-20">
         <div className="my-2 flex flex-1 flex-row justify-center overflow-hidden rounded-lg">
           <iframe

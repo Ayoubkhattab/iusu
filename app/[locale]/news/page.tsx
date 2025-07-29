@@ -29,10 +29,10 @@ export default async function News({
   const t = await getTranslations("NewsPage");
 
   const apiResponse: any = await getNews(searchParams.keyword);
-  const NewsData: Array<NewsCardType> = apiResponse.data.data;
+  const NewsData: Array<NewsCardType> = apiResponse?.data?.data;
 
   if (!Array.isArray(NewsData)) {
-    return <p>لا يوجد بيانات حتى هذه اللحظة.</p>;
+    return <div className="min-h-[90vh]">لا يوجد بيانات حتى هذه اللحظة.</div>;
   }
   return (
     <main className="bg-neutral-100">

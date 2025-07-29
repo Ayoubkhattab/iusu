@@ -40,7 +40,19 @@ const latestNews: Array<any> = [
 ];
 
 export default async function LatestNews() {
-  const cardsNewsData: Array<NewsCardType> = await getNews();
+  // const cardsNewsData: Array<NewsCardType> = await getNews();
+  const cardsNewsData: NewsCardType[] = latestNews.map((item, index) => ({
+    newsId: item.id,
+    title: item.title,
+    description: item.body,
+    newsDate: item.date,
+    newsTime: "10:00",
+    cardImageLink: item.image,
+    views: 100 + index,
+    class: item.class,
+    newsLink: item.link || `news/${item.id}`,
+  }));
+
   // const cardsNewsData: Array<NewsCardType> = latestNews;
   if (!Array.isArray(cardsNewsData)) {
     return <p>No data provided.</p>;

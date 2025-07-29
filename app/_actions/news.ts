@@ -30,5 +30,5 @@ export default async function getNews(
 
   const response = await result.json();
 
-  return response;
+  return response.data.data;
 }

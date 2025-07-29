@@ -33,9 +33,6 @@ export default async function RootLayout({
     <html lang={locale} dir={direction}>
       <body className={`${alexandria.className} bg-gray`}>
         <Header />
-        <p className="w-full bg-yellow-200 p-4 text-center text-red-500 shadow-lg">
-          الموقع قيد التطوير
-        </p>
         {children}
         <Footer />
       </body>

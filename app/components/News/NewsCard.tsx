@@ -18,7 +18,7 @@ export default function NewsCard({
 }: NewsCardType) {
   return (
     <div>
-      <div className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow">
+      <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow">
         <Image
           className="max-h-[312px] rounded-t-lg"
           src={cardImageLink}
@@ -30,26 +30,7 @@ export default function NewsCard({
 
         <div className="p-5">
           <div className="small-text my-3 flex flex-row items-baseline justify-between">
-            <div className="flex">
-              {/* News date  */}
-
-              <p className="me-4 flex flex-row items-baseline gap-x-2 text-sm">
-                {/* Icon  */}
-                <FaRegCalendarDays className="text-info" />
-                {/* text  */}
-                <span className="text-secondary" dir="ltr">
-                  {newsDate}
-                </span>
-              </p>
-              {/* News views  */}
-              <p className="flex flex-row items-baseline gap-x-2 text-sm">
-                {/* Icon  */}
-                <FaRegEye className="text-info" />
-
-                {/* text  */}
-                <span className="text-secondary">{views}</span>
-              </p>
-            </div>
+            <div className="flex">{/* News views  */}</div>
 
             {/* News share  */}
             {!hideShareIcon && <NewsShareButton resource={`news/${newsId}`} />}
@@ -65,9 +46,18 @@ export default function NewsCard({
             {description || newsBodyText}
           </p>
           {/* End description */}
+          {/* News date  */}
 
+          <p className="me-4 flex flex-row items-baseline gap-x-2 text-sm">
+            {/* Icon  */}
+            <FaRegCalendarDays className="text-info" />
+            {/* text  */}
+            <span className="text-secondary" dir="ltr">
+              {newsDate}
+            </span>
+          </p>
           {/* Card Button  */}
-          <div className="flex flex-row justify-end">
+          <div className="flex flex-row justify-start">
             <NewsCardButton text="قراءة الخبر" link={newsLink} />
           </div>
           {/* Card Button  */}
