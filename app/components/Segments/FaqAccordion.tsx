@@ -65,9 +65,8 @@ export default function FaqAccordion({
               className={`answer rounded bg-white px-5 pb-5 pt-5 text-sm font-medium leading-8 text-[#343E3A] ${
                 open === index ? "block" : "hidden"
               }`}
-            >
-              {item.answer}
-            </div>
+              dangerouslySetInnerHTML={{ __html: item.answer }}
+            ></div>
           </div>
         );
       })}
