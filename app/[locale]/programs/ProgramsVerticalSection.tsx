@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import ProgramsAccordion from "./ProgramsAccordion";
 
 type Program = {
@@ -21,30 +20,23 @@ export default function ProgramsVerticalSection({ onSelectProgram }: Props) {
   const programsData: ProgramsGroup[] = [
     {
       title: "برامج الدبلوم",
-      links: [
-        { id: "bachelor_sunnah", title: "بكالوريوس كلية السنة النبوية" },
-        { id: "bachelor_engineering", title: "بكالوريوس الهندسة" },
-      ],
+      links: [{ id: "dawah", title: "دبلوم الدعوة الإسلامية" }],
     },
     {
       title: "برامج البكالوريوس",
       links: [
-        { id: "bachelor_sunnah", title: "بكالوريوس كلية السنة النبوية" },
-        { id: "bachelor_engineering", title: "بكالوريوس الهندسة" },
+        { id: "quran", title: "كلية القرآن الكريم" },
+        { id: "hadith", title: "كلية السنة النبوية" },
       ],
     },
     {
       title: "برامج الماجستير",
-      links: [
-        { id: "bachelor_sunnah", title: "بكالوريوس كلية السنة النبوية" },
-        { id: "bachelor_engineering", title: "بكالوريوس الهندسة" },
-      ],
+      links: [{ id: "qraat", title: "المعهد التخصصي للقراءات وعلوم القرآن" }],
     },
-    // أضف مجموعات أخرى حسب الحاجة
   ];
 
   return (
-    <div className="vertical-section hidden w-80 rounded-lg rounded-tl-2xl rounded-tr-2xl bg-white lg:block">
+    <div className="vertical-section w-full rounded-lg bg-white shadow-lg lg:block">
       <div className="news-list">
         {programsData.map((group, idx) => (
           <ProgramsAccordion
