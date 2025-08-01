@@ -41,52 +41,69 @@ export default function ProgramContent({ programId, programYears }: Props) {
 
   return (
     <>
-      <div className="mb-6 border-b border-gray-300">
-        <button
-          onClick={() => setActiveTab("about")}
-          className={`px-4 py-2 text-sm font-medium ${
-            activeTab === "about"
-              ? "border-b-2 border-teal-600 text-teal-600"
-              : "text-gray-600"
-          }`}
-        >
-          عن البرنامج
-        </button>
-        <button
-          onClick={() => setActiveTab("plan")}
-          className={`px-4 py-2 text-sm font-medium ${
-            activeTab === "plan"
-              ? "border-b-2 border-teal-600 text-teal-600"
-              : "text-gray-600"
-          }`}
-        >
-          الخطة الدراسية
-        </button>
+      <div className="mb-6">
+        {programYears.length > 0 && (
+          <DecisionsImage
+            image="/placeholder.svg?height=200&width=800&text=Academic+Program"
+            title={programYears[0].title}
+          />
+        )}
+        <div className="m-4 flex max-w-[30%] flex-row overflow-hidden rounded-xl rounded-b-none border border-gray-300">
+          <button
+            onClick={() => setActiveTab("about")}
+            className={`flex-1 rounded-b-none px-4 py-2 text-sm font-medium ${
+              activeTab === "about"
+                ? "rounded-r-lg bg-[#137DA4] text-white"
+                : "bg-white text-gray-600"
+            }`}
+          >
+            عن البرنامج
+          </button>
+          <button
+            onClick={() => setActiveTab("plan")}
+            className={`flex-1 border-l border-gray-300 px-4 py-2 text-sm font-medium ${
+              activeTab === "plan"
+                ? "bg-[#137DA4] text-white"
+                : "bg-white text-gray-600"
+            }`}
+          >
+            الخطة الدراسية
+          </button>
+        </div>
       </div>
       {activeTab === "about" ? (
         <div className="space-y-4 leading-relaxed text-gray-800">
-          <h2 className="text-xl font-bold text-teal-700">
-            {programIntro.title}
-          </h2>
-          <p>{programIntro.description}</p>
-          <h3 className="text-lg font-semibold">الرؤية</h3>
+          <h3 className="text-centertext-lg rounded-[16px] bg-gradient-to-r from-[#137DA4] to-[#03A579] p-2 text-center font-semibold text-white">
+            الرؤية
+          </h3>
           <p>{programIntro.vision}</p>
-          <h3 className="text-lg font-semibold">الرسالة</h3>
+          <h3 className="rounded-[16px] bg-gradient-to-r from-[#137DA4] to-[#03A579] p-2 text-center text-lg font-semibold text-white">
+            الرسالة
+          </h3>
           <p>{programIntro.mission}</p>
-          <h3 className="text-lg font-semibold">الأهداف</h3>
-          <ul className="list-inside list-decimal">
-            {programIntro.goals.map((g, i) => (
-              <li key={i}>{g}</li>
-            ))}
-          </ul>
-          <h3 className="text-lg font-semibold">البرامج الدراسية</h3>
-          <ul className="list-inside list-disc">
+          <h3 className="rounded-[16px] bg-gradient-to-r from-[#137DA4] to-[#03A579] p-2 text-center text-lg font-semibold text-white">
+            الأهداف
+          </h3>
+
+          <div className="rounded-[16px] p-4">
+            <ul className="list-inside list-decimal">
+              {programIntro.goals.map((g, i) => (
+                <li key={i}>{g}</li>
+              ))}
+            </ul>
+          </div>
+          <h3 className="rounded-[16px] bg-gradient-to-r from-[#137DA4] to-[#03A579] p-2 text-center text-lg font-semibold text-white">
+            البرامج الدراسية
+          </h3>
+          <ul className="list-inside list-decimal space-y-2">
             {programIntro.subjects.map((s, i) => (
               <li key={i}>{s}</li>
             ))}
           </ul>
-          <h3 className="text-lg font-semibold">القيم</h3>
-          <ul className="list-inside list-disc">
+          <h3 className="rounded-[16px] bg-gradient-to-r from-[#137DA4] to-[#03A579] p-2 text-center text-lg font-semibold text-white">
+            القيم
+          </h3>
+          <ul className="font- list-inside list-decimal space-y-2">
             {programIntro.values.map((v, i) => (
               <li key={i}>{v}</li>
             ))}
@@ -96,23 +113,12 @@ export default function ProgramContent({ programId, programYears }: Props) {
         <div>
           {programYears.map((program, i) => (
             <div key={program.id}>
-              {i === 0 && (
-                <DecisionsImage
-                  image="/placeholder.svg?height=200&width=800&text=Academic+Program"
-                  title={program.title}
-                />
-              )}
               <div className="my-6">
                 <h2 className="mb-4 text-2xl font-bold text-gray-800">
                   {program.year}
                 </h2>
                 {program.semesters.map((sem, j) => (
-                  <ProgramTable
-                    key={j}
-                    semester={sem}
-                    // semesterIndex={j} // Removed unused prop
-                    year={program.year}
-                  />
+                  <ProgramTable key={j} semester={sem} year={program.year} />
                 ))}
               </div>
             </div>
