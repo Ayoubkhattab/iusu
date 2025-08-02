@@ -50,7 +50,7 @@ export default function ProgramTable({ semester, year }: ProgramTableProps) {
         </table>
       </div>
       <div className="bg-teal-600 px-4 py-2 text-center text-sm text-white">
-        إجمالي: {semester.courses.length} مقرر
+        إجمالي: {semester.courses.length} مقررات
       </div>
     </div>
   );
