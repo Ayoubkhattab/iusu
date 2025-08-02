@@ -15,9 +15,9 @@ const links: Array<_Link> = [
   { href: "/", label: "الرئيسية", is_active: false, id: 1 },
   { href: "/who-us", label: "من نحن", is_active: false, id: 2 },
   { href: "/programs", label: "البرامج الأكاديمية", is_active: false, id: 3 },
-  { href: "/about-university", label: "عـن الجامعة", is_active: false, id: 4 },
-  { href: "/news", label: "الأخبار", is_active: false, id: 5 },
 ];
+// { href: "/about-university", label: "عـن الجامعة", is_active: false, id: 4 },
+// { href: "/news", label: "الأخبار", is_active: false, id: 5 },
 // { href: "/decisions", label: "الأنظمة والقرارات", is_active: false, id: 6 },
 
 export default function Header() {
@@ -108,14 +108,14 @@ export default function Header() {
                 );
               })}
 
-              <li className=" ">
+              {/* <li className=" ">
                 <Link
                   href={"#"}
                   className="block cursor-not-allowed px-3 py-1 md:rounded-xl md:border"
                 >
                   البوابة الإلكترونية
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
           {/* end links  */}

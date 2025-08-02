@@ -73,7 +73,9 @@ export default function ProgramsAccordion({
                 className="cursor-pointer list-disc border-b py-1 text-[#9c9c9c]"
                 onClick={() => onSelect(item.id)}
               >
-                <span className="text-lg hover:text-info">{item.title}</span>
+                <span className="text-lg font-semibold text-black hover:text-info">
+                  {item.title}
+                </span>
               </li>
             ))}
           </ul>

@@ -44,7 +44,7 @@ export default function ProgramContent({ programId, programYears }: Props) {
       <div className="mb-6">
         {programYears.length > 0 && (
           <DecisionsImage
-            image="/placeholder.svg?height=200&width=800&text=Academic+Program"
+            image="/images/sho3ib.webp"
             title={programYears[0].title}
           />
         )}
@@ -113,14 +113,14 @@ export default function ProgramContent({ programId, programYears }: Props) {
         <div>
           {programYears.map((program, i) => (
             <div key={program.id}>
-              <div className="my-6">
-                <h2 className="mb-4 text-2xl font-bold text-gray-800">
-                  {program.year}
-                </h2>
-                {program.semesters.map((sem, j) => (
-                  <ProgramTable key={j} semester={sem} year={program.year} />
-                ))}
-              </div>
+              {program.semesters.map((sem, j) => (
+                <div key={j} className="mb-6">
+                  <h2 className="mb-2 text-lg font-bold text-gray-800">
+                    {program.year} - {sem.name}
+                  </h2>
+                  <ProgramTable semester={sem} year={program.year} />
+                </div>
+              ))}
             </div>
           ))}
         </div>

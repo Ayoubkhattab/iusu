@@ -275,7 +275,7 @@ export const programsDetails: Record<string, ProgramDetailsType[]> = {
   dawah: [
     {
       id: "bachelor_dawah_year1",
-      title: "كلية الدعوة",
+      title: "دبلوم الدعوة الإسلامية",
       year: "السنة الأولى",
       semesters: [
         {
@@ -307,7 +307,7 @@ export const programsDetails: Record<string, ProgramDetailsType[]> = {
     },
     {
       id: "bachelor_dawah_year2",
-      title: "كلية الدعوة",
+      title: "دبلوم الدعوة الإسلامية",
       year: "السنة الثانية",
       semesters: [
         {
@@ -340,7 +340,7 @@ export const programsDetails: Record<string, ProgramDetailsType[]> = {
     },
     {
       id: "bachelor_dawah_year3",
-      title: "كلية الدعوة",
+      title: "دبلوم الدعوة الإسلامية",
       year: "السنة الثالثة",
       semesters: [
         {
@@ -372,7 +372,7 @@ export const programsDetails: Record<string, ProgramDetailsType[]> = {
     },
     {
       id: "bachelor_dawah_year4",
-      title: "كلية الدعوة",
+      title: "دبلوم الدعوة الإسلامية",
       year: "السنة الرابعة",
       semesters: [
         {

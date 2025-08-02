@@ -19,11 +19,11 @@ export default function ProgramTable({ semester, year }: ProgramTableProps) {
       <div className="overflow-x-auto">
         <table className="w-full border-collapse" dir="rtl">
           <thead>
-            <tr className="bg-teal-600 text-center text-sm font-bold text-white">
-              <th className="border-r border-teal-500 px-4 py-3">الرقم</th>
-              <th className="border-r border-teal-500 px-4 py-3">المقرر</th>
-              <th className="border-r border-teal-500 px-4 py-3">السنة</th>
-              <th className="px-4 py-3">الفصل</th>
+            <tr className="bg-teal-600 text-center text-lg font-bold text-white">
+              <th className="w-10 border-r border-teal-500 px-4 py-3">الرقم</th>
+              <th className="border-r border-teal-500 px-4 py-3">المقررات </th>
+              {/* <th className="border-r border-teal-500 px-4 py-3">السنة</th>
+              <th className="px-4 py-3">الفصل</th> */}
             </tr>
           </thead>
           <tbody>
@@ -35,15 +35,15 @@ export default function ProgramTable({ semester, year }: ProgramTableProps) {
                 <td className="border-r border-gray-200 px-4 py-2 text-center text-gray-700">
                   {index + 1}
                 </td>
-                <td className="border-r border-gray-200 px-4 py-2 text-gray-800">
+                <td className="border-r border-gray-200 px-4 py-2 text-center text-lg text-gray-800">
                   {course.title}
                 </td>
-                <td className="border-r border-gray-200 px-4 py-2 text-center text-gray-600">
+                {/* <td className="border-r border-gray-200 px-4 py-2 text-center text-gray-600">
                   {year}
                 </td>
                 <td className="px-4 py-2 text-center text-gray-600">
                   {semester.name}
-                </td>
+                </td> */}
               </tr>
             ))}
           </tbody>
